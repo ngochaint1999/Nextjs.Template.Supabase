@@ -1,0 +1,20 @@
+{
+  "IndexPage": {
+    "title": "Hello world!",
+    "description": "My name is Mai Hưng"
+  },
+  "LoginPage": {
+    "signin": "Login",
+    "signup": "Register"
+  },
+  "NotFoundPage": {
+    "title": "Page Not Found",
+    "description": "Oops! It seems like you've stumbled upon a page that doesn't exist. Don't worry, our internationalization magic is still hard at work on other parts of the app. Feel free to navigate back to explore more!"
+  },
+  "Navigation": {
+    "home": "Home"
+  },
+  "Footer": {
+    "copyright": "© 2024 Your App. All rights reserved."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "IndexPage": {
+    "title": "Xin chào thế giới!",
+    "description": "Tên tôi là Mai Hưng"
+  },
+  "LoginPage": {
+    "signin": "Đăng nhập",
+    "signup": "Đăng kí"
+  },
+  "NotFoundPage": {
+    "title": "Không tìm thấy trang",
+    "description": "Tìm hem thấy gì hết nè"
+  },
+  "Navigation": {
+    "home": "Trang  chủ"
+  },
+  "Footer": {
+    "copyright": "© 2024, được làm bởi tôi."
+  }
+}
