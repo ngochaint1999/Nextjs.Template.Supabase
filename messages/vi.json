@@ -7,6 +7,11 @@
     "signin": "Đăng nhập",
     "signup": "Đăng kí"
   },
+  "SignupPage": {
+    "account": "Tài khoản",
+    "password": "Mật khẩu",
+    "signup": "Đăng ký"
+  },
   "NotFoundPage": {
     "title": "Không tìm thấy trang",
     "description": "Tìm hem thấy gì hết nè"
