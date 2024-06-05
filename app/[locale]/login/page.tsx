@@ -8,10 +8,11 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { emailLogin, signup } from "./actions";
+import { login, signup } from "./actions";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import { OAuthButtons } from "./oauth-signin";
+import { getTranslations } from "next-intl/server";
 
 export default async function Login({
   searchParams,
@@ -19,23 +20,21 @@ export default async function Login({
   searchParams: { message: string };
 }) {
   const supabase = await createClient();
-
+  const t = await getTranslations("LoginPage");
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
   if (user) {
-    return redirect("/todos");
+    return redirect("/blog");
   }
 
   return (
-    <section className="h-[calc(100vh-57px)] flex justify-center items-center">
+    <section className="flex justify-center items-center">
       <Card className="mx-auto max-w-sm">
         <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>
-            Enter your email below to login to your account
-          </CardDescription>
+          <CardTitle className="text-2xl">{t("signin")}</CardTitle>
+          <CardDescription>{t("description")}</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
           <form id="login-form" className="grid gap-4">
@@ -51,13 +50,14 @@ export default async function Login({
             </div>
             <div className="grid gap-2">
               <div className="flex items-center">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">{t("password")}</Label>
               </div>
               <Input
                 minLength={6}
                 name="password"
                 id="password"
                 type="password"
+                placeholder="*******"
                 required
               />
             </div>
@@ -66,15 +66,15 @@ export default async function Login({
                 {searchParams.message}
               </div>
             )}
-            <Button formAction={emailLogin} className="w-full">
-              Login
+            <Button formAction={login} className="w-full">
+              {t("signin")}
             </Button>
           </form>
           <OAuthButtons />
           <div className="text-center text-sm">
-            Don&apos;t have an account?{" "}
+            {t("do not have an account")}
             <button formAction={signup} form="login-form" className="underline">
-              Sign up
+              {t("signup")}
             </button>
           </div>
         </CardContent>

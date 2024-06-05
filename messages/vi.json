@@ -5,19 +5,33 @@
   },
   "LoginPage": {
     "signin": "Đăng nhập",
-    "signup": "Đăng kí"
-  },
-  "SignupPage": {
-    "account": "Tài khoản",
+    "signup": "Đăng kí",
+    "description": "Nhập email của bạn dưới đây để đăng nhập vào tài khoản của bạn",
     "password": "Mật khẩu",
-    "signup": "Đăng ký"
+    "loginWith": "Đăng nhập với",
+    "do not have an account": "Chưa có tài khoản?"
+  },
+  "BlogPage": {
+    "title": "Bài viết"
+  },
+  "LocaleSwitcher": {
+    "label": "Thay đổi ngôn ngữ",
+    "locale": "{locale, select, vi {vi Vietnamese} en {🇺🇸 English} other {Unknown}}"
+  },
+  "AboutPage": {
+    "title": "Về chúng tôi"
   },
   "NotFoundPage": {
     "title": "Không tìm thấy trang",
     "description": "Tìm hem thấy gì hết nè"
   },
+  "TodoPage": {
+    "title": "Việc cần làm"
+  },
   "Navigation": {
-    "home": "Trang  chủ"
+    "home": "Trang  chủ",
+    "signout": "Đăng xuất",
+    "signin": "Đăng nhập"
   },
   "Footer": {
     "copyright": "© 2024, được làm bởi tôi."

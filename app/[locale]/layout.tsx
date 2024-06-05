@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,17 +20,20 @@ interface RootLayoutProps {
     locale: string;
   };
 }
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: Readonly<RootLayoutProps>) {
+  const messages = await getMessages();
   return (
     <html lang={locale}>
       <body className={inter.className}>
         <div className="flex flex-col min-h-screen max-w-4xl mx-auto">
-          <Header />
-          <div className="flex-grow mt-20">{children}</div>
-          <Footer />
+          <NextIntlClientProvider messages={messages}>
+            <Header />
+            <div className="flex-grow mt-20">{children}</div>
+            <Footer />
+          </NextIntlClientProvider>
         </div>
       </body>
     </html>

@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
 import LocalSwitcher from "@/components/locale-switcher";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { signOut } from "@/app/[locale]/login/actions";
+import { useTranslations } from "next-intl";
 
 export default async function Header() {
   const supabase = await createClient();
-
+  const t = await getTranslations("Navigation");
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -24,11 +26,11 @@ export default async function Header() {
           {user !== null ? (
             <form action={signOut} className="flex items-center gap-2">
               <p>{user.email}</p>
-              <Button>Sign Out</Button>
+              <Button>{t("signout")}</Button>
             </form>
           ) : (
             <Button asChild>
-              <Link href="/en/login">Sign In</Link>
+              <Link href="/login">{t("signin")}</Link>
             </Button>
           )}
         </div>

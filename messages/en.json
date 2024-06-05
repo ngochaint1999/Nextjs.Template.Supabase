@@ -5,14 +5,30 @@
   },
   "LoginPage": {
     "signin": "Login",
-    "signup": "Register"
+    "signup": "Register",
+    "description": "Enter your email below to login to your account",
+    "password": "Password",
+    "loginWith": "Đăng nhập với",
+    "do not have an account": "Don't have an account?"
+  },
+  "BlogPage": {
+    "title": "Blog"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, vi {vi Vietnamese} en {🇺🇸 English} other {Unknown}}"
+  },
+  "AboutPage": {
+    "title": "About"
   },
   "NotFoundPage": {
     "title": "Page Not Found",
     "description": "Oops! It seems like you've stumbled upon a page that doesn't exist. Don't worry, our internationalization magic is still hard at work on other parts of the app. Feel free to navigate back to explore more!"
   },
   "Navigation": {
-    "home": "Home"
+    "home": "Home",
+    "signout": "Sign Out",
+    "signin": "Sign In"
   },
   "Footer": {
     "copyright": "© 2024 Your App. All rights reserved."
