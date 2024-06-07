@@ -4,11 +4,10 @@ import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
 export default async function BlogPage() {
-  const supabase = await createClient();
   const t = await getTranslations("BlogPage");
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await createClient().auth.getUser();
 
   if (!user) {
     return redirect("/login");

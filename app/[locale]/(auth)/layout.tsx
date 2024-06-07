@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { Providers } from "@/app/[locale]/providers";
-import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +16,7 @@ interface RootLayoutProps {
     locale: string;
   };
 }
-export default async function RootLayout({
+export default async function AuthLayout({
   children,
   params: { locale },
 }: Readonly<RootLayoutProps>) {
@@ -29,15 +24,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <div className="flex flex-col min-h-screen max-w-4xl mx-auto">
-          <NextIntlClientProvider messages={messages}>
-            <Providers>
-              <Header />
-              <div className="flex-grow mt-20">{children}</div>
-              <Footer />
-            </Providers>
-          </NextIntlClientProvider>
-        </div>
+        <div className="mt-20">{children}</div>
       </body>
     </html>
   );

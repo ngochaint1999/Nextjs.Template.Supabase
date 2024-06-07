@@ -15,8 +15,7 @@
     "title": "Bài viết"
   },
   "LocaleSwitcher": {
-    "label": "Thay đổi ngôn ngữ",
-    "locale": "{locale, select, vi {vi Vietnamese} en {🇺🇸 English} other {Unknown}}"
+    "locale": "{locale, select, vi {Tiếng Việt} en {Tiếng Anh} other {Khác}}"
   },
   "AboutPage": {
     "title": "Về chúng tôi"

@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
 import LocalSwitcher from "@/components/locale-switcher";
+import ThemeSwitch from "@/components/theme-switch";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-import { signOut } from "@/app/[locale]/login/actions";
-import { useTranslations } from "next-intl";
+import { signOut } from "@/app/[locale]/(auth)/login/actions";
 
 export default async function Header() {
   const supabase = await createClient();
@@ -22,8 +22,9 @@ export default async function Header() {
           </a>
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-2">
+          <ThemeSwitch />
           <LocalSwitcher />
-          {user !== null ? (
+          {user ? (
             <form action={signOut} className="flex items-center gap-2">
               <p>{user.email}</p>
               <Button>{t("signout")}</Button>
