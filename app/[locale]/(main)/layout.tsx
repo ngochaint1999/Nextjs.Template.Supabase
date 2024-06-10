@@ -1,5 +1,8 @@
+import { Suspense } from "react";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+
 interface MainLayoutProps {
   children: React.ReactNode;
 }
