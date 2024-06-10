@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Providers } from "@/app/[locale]/providers";
@@ -32,9 +30,7 @@ export default async function RootLayout({
         <div className="flex flex-col min-h-screen max-w-4xl mx-auto">
           <NextIntlClientProvider messages={messages}>
             <Providers>
-              <Header />
-              <div className="flex-grow mt-20">{children}</div>
-              <Footer />
+              <div className="flex-grow">{children}</div>
             </Providers>
           </NextIntlClientProvider>
         </div>
